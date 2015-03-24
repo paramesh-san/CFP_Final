@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<script>
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","file.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+document.write("<table><tr><th>Artist</th><th>Artist</th><th>Artist</th><th>Artist</th><th>Artist</th><th>Artist</th><th>Artist</th><th>Title</th></tr>");
+var x=xmlDoc.getElementsByTagName("demo");
+for (i=0;i<x.length;i++)
+  { 
+  document.write("<tr><td>");
+  document.write(x[i].getElementsByTagName("userID")[0].childNodes[0].nodeValue);
+  c[i]=x[i].getElementsByTagName("userID")[0].childNodes[0].nodeValue;
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("currencyFrom")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+
+  document.write(x[i].getElementsByTagName("currencyTo")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("rate")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("timePlaced")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("amountBuy")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("amountSell")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("originatingCountry")[0].childNodes[0].nodeValue);
+  document.write("</td></tr>");
+
+  }
+document.write("</table>");
+document.write(c);
+</script>
+Please find the xml file in the disk named as file.xml.
+</body>
+</html>
